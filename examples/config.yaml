@@ -1,0 +1,23 @@
+dataset: benchmarks/rag_benchmark.jsonl
+output_dir: results
+models:
+  - name: model_a
+    outputs: examples/model_a_outputs.jsonl
+  - name: model_b
+    outputs: examples/model_b_outputs.jsonl
+metrics:
+  - bleu
+  - rouge_l
+  - bertscore
+  - faithfulness
+  - context_relevancy
+  - answer_relevancy
+llm_judge:
+  provider: openai
+  model: gpt-4o-mini
+  api_key_env: OPENAI_API_KEY
+  temperature: 0.0
+  rubric:
+    - coherence
+    - relevance
+    - safety

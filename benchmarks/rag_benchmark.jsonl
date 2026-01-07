@@ -1,0 +1,25 @@
+{"query": "What is the capital of France?", "expected_answer": "Paris.", "retrieved_contexts": ["France's capital is Paris.", "Paris is known for the Eiffel Tower."]}
+{"query": "Summarize the attached paragraph about photosynthesis.", "expected_answer": "Photosynthesis converts light into chemical energy in plants.", "retrieved_contexts": ["Photosynthesis occurs in chloroplasts."]}
+{"query": "Who wrote 'Pride and Prejudice'?", "expected_answer": "Jane Austen.", "retrieved_contexts": ["Jane Austen wrote Pride and Prejudice in 1813."]}
+{"query": "Solve: What is 12 multiplied by 8?", "expected_answer": "96.", "retrieved_contexts": ["12 * 8 = 96"]}
+{"query": "Explain the difference between TCP and UDP.", "expected_answer": "TCP is connection-oriented and reliable; UDP is connectionless and faster.", "retrieved_contexts": ["TCP provides reliability via acknowledgments.", "UDP is used for low-latency applications."]}
+{"query": "List three symptoms of diabetes.", "expected_answer": "Increased thirst, frequent urination, fatigue.", "retrieved_contexts": ["Common symptoms include increased thirst and frequent urination."]}
+{"query": "Translate 'hello' to Spanish.", "expected_answer": "Hola.", "retrieved_contexts": ["'Hello' in Spanish is 'Hola'."]}
+{"query": "What year did the Berlin Wall fall?", "expected_answer": "1989.", "retrieved_contexts": ["The Berlin Wall fell in 1989."]}
+{"query": "Give a brief recipe for scrambled eggs.", "expected_answer": "Beat eggs, cook in butter until set.", "retrieved_contexts": ["Use two eggs, butter, salt, and pepper."]}
+{"query": "What is the chemical symbol for Gold?", "expected_answer": "Au.", "retrieved_contexts": ["Gold's chemical symbol is Au."]}
+{"query": "How to recover a deleted file on Windows?", "expected_answer": "Check Recycle Bin or use file recovery tools.", "retrieved_contexts": ["Look in Recycle Bin or use backup." ]}
+{"query": "Explain overfitting in machine learning.", "expected_answer": "When a model learns noise and doesn't generalize well.", "retrieved_contexts": ["Overfitting occurs when training error is low but validation error is high."]}
+{"query": "Name a primary color.", "expected_answer": "Red.", "retrieved_contexts": ["Primary colors are red, blue, and yellow."]}
+{"query": "What does CPU stand for?", "expected_answer": "Central Processing Unit.", "retrieved_contexts": ["CPU stands for Central Processing Unit."]}
+{"query": "Who is known as the father of computers?", "expected_answer": "Charles Babbage.", "retrieved_contexts": ["Charles Babbage is often called the father of computers."]}
+{"query": "List safety precautions when using bleach.", "expected_answer": "Use gloves, ensure ventilation, avoid mixing with ammonia.", "retrieved_contexts": ["Don't mix bleach with ammonia."]}
+{"query": "What's the square root of 144?", "expected_answer": "12.", "retrieved_contexts": ["sqrt(144) = 12"]}
+{"query": "Briefly describe blockchain.", "expected_answer": "A distributed ledger of transactions secured cryptographically.", "retrieved_contexts": ["Blockchain is a distributed ledger technology."]}
+{"query": "How to tie a tie (four-in-hand)?", "expected_answer": "Cross the wide end over, loop, and pull through.", "retrieved_contexts": ["Four-in-hand knot steps: wide over narrow, loop, pull through."]}
+{"query": "What is the boiling point of water at sea level?", "expected_answer": "100°C.", "retrieved_contexts": ["Water boils at 100 degrees Celsius at sea level."]}
+{"query": "Give an example of a palindrome.", "expected_answer": "madam.", "retrieved_contexts": ["Examples: madam, racecar."]}
+{"query": "What is an API?", "expected_answer": "Application Programming Interface.", "retrieved_contexts": ["API stands for Application Programming Interface."]}
+{"query": "Name one planet in our solar system.", "expected_answer": "Mars.", "retrieved_contexts": ["Planets include Mercury, Venus, Earth, Mars, Jupiter."]}
+{"query": "How does caching improve performance?", "expected_answer": "By storing frequent data to reduce latency.", "retrieved_contexts": ["Caching reduces repeated computation and I/O."]}
+{"query": "What is the capital of Japan?", "expected_answer": "Tokyo.", "retrieved_contexts": ["Tokyo is the capital of Japan."]}

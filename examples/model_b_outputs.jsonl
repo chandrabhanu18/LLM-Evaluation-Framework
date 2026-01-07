@@ -1,0 +1,25 @@
+{"query": "What is the capital of France?", "prediction": "Lyon."}
+{"query": "Summarize the attached paragraph about photosynthesis.", "prediction": "Plants use chlorophyll to make food from sunlight."}
+{"query": "Who wrote 'Pride and Prejudice'?", "prediction": "Charlotte Bronte."}
+{"query": "Solve: What is 12 multiplied by 8?", "prediction": "100."}
+{"query": "Explain the difference between TCP and UDP.", "prediction": "TCP is faster; UDP is reliable."}
+{"query": "List three symptoms of diabetes.", "prediction": "Thirst, blurred vision, hair loss."}
+{"query": "Translate 'hello' to Spanish.", "prediction": "Hola."}
+{"query": "What year did the Berlin Wall fall?", "prediction": "1990."}
+{"query": "Give a brief recipe for scrambled eggs.", "prediction": "Crack eggs and stir."}
+{"query": "What is the chemical symbol for Gold?", "prediction": "Gd."}
+{"query": "How to recover a deleted file on Windows?", "prediction": "Use Command Prompt commands."}
+{"query": "Explain overfitting in machine learning.", "prediction": "When a model is too large it overfits."}
+{"query": "Name a primary color.", "prediction": "Green."}
+{"query": "What does CPU stand for?", "prediction": "Central Process Unit."}
+{"query": "Who is known as the father of computers?", "prediction": "Alan Turing."}
+{"query": "List safety precautions when using bleach.", "prediction": "Rinse with water after use."}
+{"query": "What's the square root of 144?", "prediction": "11."}
+{"query": "Briefly describe blockchain.", "prediction": "A chain of blocks containing transactions."}
+{"query": "How to tie a tie (four-in-hand)?", "prediction": "Wrap and knot."}
+{"query": "What is the boiling point of water at sea level?", "prediction": "100 degrees."}
+{"query": "Give an example of a palindrome.", "prediction": "level."}
+{"query": "What is an API?", "prediction": "A programming interface."}
+{"query": "Name one planet in our solar system.", "prediction": "Venus."}
+{"query": "How does caching improve performance?", "prediction": "It stores copies to speed up retrieval."}
+{"query": "What is the capital of Japan?", "prediction": "Kyoto."}

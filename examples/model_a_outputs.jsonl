@@ -1,0 +1,25 @@
+{"query": "What is the capital of France?", "prediction": "Paris."}
+{"query": "Summarize the attached paragraph about photosynthesis.", "prediction": "Photosynthesis lets plants convert sunlight into energy."}
+{"query": "Who wrote 'Pride and Prejudice'?", "prediction": "Jane Austen."}
+{"query": "Solve: What is 12 multiplied by 8?", "prediction": "96."}
+{"query": "Explain the difference between TCP and UDP.", "prediction": "TCP is reliable and connection-oriented; UDP is connectionless and faster."}
+{"query": "List three symptoms of diabetes.", "prediction": "Increased thirst, frequent urination, fatigue."}
+{"query": "Translate 'hello' to Spanish.", "prediction": "Hola."}
+{"query": "What year did the Berlin Wall fall?", "prediction": "1989."}
+{"query": "Give a brief recipe for scrambled eggs.", "prediction": "Beat eggs and cook in butter until set."}
+{"query": "What is the chemical symbol for Gold?", "prediction": "Au."}
+{"query": "How to recover a deleted file on Windows?", "prediction": "Check the Recycle Bin or use recovery software."}
+{"query": "Explain overfitting in machine learning.", "prediction": "When a model memorizes training data and fails on new data."}
+{"query": "Name a primary color.", "prediction": "Red."}
+{"query": "What does CPU stand for?", "prediction": "Central Processing Unit."}
+{"query": "Who is known as the father of computers?", "prediction": "Charles Babbage."}
+{"query": "List safety precautions when using bleach.", "prediction": "Wear gloves and ventilate the area."}
+{"query": "What's the square root of 144?", "prediction": "12."}
+{"query": "Briefly describe blockchain.", "prediction": "A distributed ledger secured by cryptographic hashes."}
+{"query": "How to tie a tie (four-in-hand)?", "prediction": "Cross, loop and pull through."}
+{"query": "What is the boiling point of water at sea level?", "prediction": "100°C."}
+{"query": "Give an example of a palindrome.", "prediction": "madam."}
+{"query": "What is an API?", "prediction": "Application Programming Interface."}
+{"query": "Name one planet in our solar system.", "prediction": "Mars."}
+{"query": "How does caching improve performance?", "prediction": "By storing frequent data to reduce latency."}
+{"query": "What is the capital of Japan?", "prediction": "Tokyo."}
