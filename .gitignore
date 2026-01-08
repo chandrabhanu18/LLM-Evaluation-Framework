@@ -33,7 +33,39 @@ Thumbs.db
 
 # Outputs and artifacts
 outputs/
+out/
+results/
+test_results*/
 *.zip
+
+# Build and test output logs
+*_output.txt
+*_test_output.txt
+smoke_test_*.txt
+cli_*.txt
+evaluator_*.txt
+metric_*.txt
+model_stubs_*.txt
+llm_*.txt
+submission_*.txt
+final_*.txt
+git_*.txt
 
 # Temporary installers
 .tmp_install/
+
+# Multiple venv directories
+.venv*/
+
+# Coverage reports
+.coverage*
+.coveragerc
+htmlcov/
+
+# Certification and verification docs (optional - keep if you want them tracked)
+*CERTIFICATION*.md
+*SCORECARD*.md
+VERIFICATION_*.md
+
+# Temporary verification results
+test_results_verify/
