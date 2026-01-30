@@ -1,9 +1,0 @@
-[run]
-omit =
-    src/llm_eval/cli.py
-    src/llm_eval/evaluator.py
-    src/llm_eval/metrics/llm_judge.py
-    src/llm_eval/metrics/rag.py
-    src/llm_eval/metrics/reference.py
-    src/llm_eval/metrics/base.py
-    src/llm_eval/reporting.py

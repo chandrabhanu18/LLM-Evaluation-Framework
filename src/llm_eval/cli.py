@@ -24,13 +24,13 @@ def load_config(path: str) -> EvalConfig:
     return EvalConfig(**data)
 
 
-@app.command()
 def run(
-    config: str = typer.Option(..., help="Path to config YAML/JSON"),
-    output_dir: Optional[str] = typer.Option(None, help="Override output directory"),
-    verbose: bool = typer.Option(False, "--verbose", help="Verbose logging"),
-    models: Optional[str] = typer.Option(None, help="Comma-separated model names to run"),
+    config: str,
+    output_dir: Optional[str] = None,
+    verbose: bool = False,
+    models: Optional[str] = None,
 ):
+    """Execute the evaluation pipeline."""
     cfg = load_config(config)
     if output_dir:
         cfg.output_dir = output_dir
@@ -40,6 +40,21 @@ def run(
 
     evaluator = Evaluator(cfg, verbose=verbose)
     evaluator.run()
+
+
+@app.callback(invoke_without_command=True)
+def main(
+    ctx: typer.Context,
+    config: str = typer.Option(..., "--config", help="Path to config YAML/JSON"),
+    output_dir: Optional[str] = typer.Option(None, "--output-dir", help="Override output directory"),
+    verbose: bool = typer.Option(False, "--verbose", help="Verbose logging"),
+    models: Optional[str] = typer.Option(None, "--models", help="Comma-separated model names to run"),
+):
+    """LLM Evaluation Framework - Run evaluations against benchmark datasets."""
+    if ctx.resilient_parsing:
+        return
+    
+    run(config=config, output_dir=output_dir, verbose=verbose, models=models)
 
 
 if __name__ == "__main__":
