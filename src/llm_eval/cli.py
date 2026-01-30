@@ -1,3 +1,4 @@
+import sys
 import typer
 import yaml
 import json
@@ -5,8 +6,6 @@ from pathlib import Path
 from typing import Optional
 from .config import EvalConfig
 from .evaluator import Evaluator
-
-app = typer.Typer()
 
 
 def load_config(path: str) -> EvalConfig:
@@ -24,13 +23,13 @@ def load_config(path: str) -> EvalConfig:
     return EvalConfig(**data)
 
 
-def run(
-    config: str,
-    output_dir: Optional[str] = None,
-    verbose: bool = False,
-    models: Optional[str] = None,
+def main(
+    config: str = typer.Option(..., "--config", help="Path to config YAML/JSON"),
+    output_dir: Optional[str] = typer.Option(None, "--output-dir", help="Override output directory"),
+    verbose: bool = typer.Option(False, "--verbose", help="Verbose logging"),
+    models: Optional[str] = typer.Option(None, "--models", help="Comma-separated model names to run"),
 ):
-    """Execute the evaluation pipeline."""
+    """LLM Evaluation Framework - Run evaluations against benchmark datasets."""
     cfg = load_config(config)
     if output_dir:
         cfg.output_dir = output_dir
@@ -42,20 +41,9 @@ def run(
     evaluator.run()
 
 
-@app.callback(invoke_without_command=True)
-def main(
-    ctx: typer.Context,
-    config: str = typer.Option(..., "--config", help="Path to config YAML/JSON"),
-    output_dir: Optional[str] = typer.Option(None, "--output-dir", help="Override output directory"),
-    verbose: bool = typer.Option(False, "--verbose", help="Verbose logging"),
-    models: Optional[str] = typer.Option(None, "--models", help="Comma-separated model names to run"),
-):
-    """LLM Evaluation Framework - Run evaluations against benchmark datasets."""
-    if ctx.resilient_parsing:
-        return
-    
-    run(config=config, output_dir=output_dir, verbose=verbose, models=models)
+app = typer.Typer()
+app.command()(main)
 
 
 if __name__ == "__main__":
-    app()
+    typer.run(main)

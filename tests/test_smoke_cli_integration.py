@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def test_cli_help():
-    res = subprocess.run([sys.executable, "-m", "llm_eval.cli", "--help"], capture_output=True, text=True)
+    res = subprocess.run([sys.executable, "-m", "llm_eval", "--help"], capture_output=True, text=True)
     assert res.returncode == 0
     assert "run" in res.stdout or "Usage" in res.stdout or "Usage" in res.stderr
 
@@ -14,7 +14,7 @@ def test_cli_smoke_run(tmp_path):
     cmd = [
         sys.executable,
         "-m",
-        "llm_eval.cli",
+        "llm_eval",
         "--config",
         "examples/config.yaml",
         "--output-dir",
