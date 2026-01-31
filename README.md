@@ -26,6 +26,11 @@ A production-grade evaluation framework for Large Language Models (LLMs). This f
 - [Performance](#performance)
 - [Contributing](#contributing)
 
+### Additional Documentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Detailed system design, component interactions, and design patterns
+- **[API_DOCS.md](API_DOCS.md)** - Complete API reference for all classes and functions
+
 ---
 
 ## Quick Start
@@ -50,6 +55,18 @@ pip install -e .
 
 ```bash
 llm-eval run --config examples/config.yaml --output-dir results --verbose
+```
+
+Optional filters:
+
+```bash
+llm-eval run --config examples/config.yaml --output-dir results --models model_a --metrics bleu,rouge_l
+```
+
+Logging control:
+
+```bash
+llm-eval run --config examples/config.yaml --output-dir results --log-level DEBUG
 ```
 
 This will:
@@ -228,6 +245,9 @@ llm_judge:
 | `llm_judge.model` | string | No | Model name (gpt-4o-mini, claude-3-sonnet) |
 | `llm_judge.api_key_env` | string | No | Environment variable for API key |
 | `llm_judge.rubric` | list | No | Evaluation dimensions |
+| `llm_judge.max_retries` | int | No | Retry attempts for API errors |
+| `llm_judge.failure_threshold` | int | No | Circuit breaker threshold |
+| `llm_judge.max_tokens` | int | No | Max tokens for judge responses |
 
 ### Dataset Format
 

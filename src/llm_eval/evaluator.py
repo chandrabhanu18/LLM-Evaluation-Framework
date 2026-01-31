@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 from typing import Dict, Any, List
 from pathlib import Path
 from .config import EvalConfig
@@ -25,10 +26,17 @@ METRIC_REGISTRY = {
 
 class Evaluator:
     def __init__(self, config: EvalConfig, verbose: bool = False):
+        self.logger = logging.getLogger(self.__class__.__name__)
         self.config = config
         self.verbose = verbose
         self.dataset = load_dataset(config.dataset)
         Path(config.output_dir).mkdir(parents=True, exist_ok=True)
+        self.logger.info("Loaded dataset from %s", config.dataset)
+        try:
+            if hasattr(self.dataset, "shape"):
+                self.logger.info("Dataset size: %s rows", self.dataset.shape[0])
+        except Exception:
+            pass
 
     def _load_model_outputs(self, path: str) -> Dict[str, str]:
         outputs = {}
@@ -56,8 +64,10 @@ class Evaluator:
         per_example = []
 
         metrics = [self._instantiate_metric(m) for m in self.config.metrics]
+        self.logger.info("Metrics: %s", ", ".join([m.name for m in metrics]))
 
         model_outputs = {m.name: self._load_model_outputs(m.outputs) for m in self.config.models}
+        self.logger.info("Models: %s", ", ".join([m.name for m in self.config.models]))
 
         # Support both pandas DataFrame and plain list-of-dicts (for lightweight tests)
         if hasattr(self.dataset, "iterrows"):
@@ -73,6 +83,8 @@ class Evaluator:
             example_results = {}
             for model in self.config.models:
                 pred = model_outputs.get(model.name, {}).get(query, "")
+                if self.verbose:
+                    self.logger.debug("Evaluating query='%s' model='%s'", query, model.name)
                 model_res = {}
                 for metric in metrics:
                     try:

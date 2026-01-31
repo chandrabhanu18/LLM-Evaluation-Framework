@@ -12,18 +12,54 @@ def save_json_report(report: Dict[str, Any], path: Path):
 def save_markdown_report(report: Dict[str, Any], path: Path):
     lines = ["# Evaluation Report", ""]
     agg = report.get("aggregate", {})
+    per_all = report.get("per_example", [])
+
+    lines.append("## Summary")
+    lines.append(f"- Examples: {len(per_all)}")
+    try:
+        model_names = sorted({m for ex in per_all for m in (ex.get("results") or {}).keys()})
+        if model_names:
+            lines.append(f"- Models: {', '.join(model_names)}")
+    except Exception:
+        pass
+    lines.append("")
+
     lines.append("## Aggregate Statistics")
-    for m, stats in agg.items():
-        lines.append(f"### {m}")
-        if stats:
-            lines.append(f"- mean: {stats['mean']:.4f}")
-            lines.append(f"- median: {stats['median']:.4f}")
-            lines.append(f"- std: {stats['std']:.4f}")
-            lines.append(f"- min: {stats['min']:.4f}")
-            lines.append(f"- max: {stats['max']:.4f}")
+    if agg:
+        lines.append("| Metric | Mean | Median | Std | Min | Max |")
+        lines.append("|---|---:|---:|---:|---:|---:|")
+        for m, stats in agg.items():
+            if stats:
+                lines.append(
+                    "| {metric} | {mean:.4f} | {median:.4f} | {std:.4f} | {min:.4f} | {max:.4f} |".format(
+                        metric=m,
+                        mean=stats["mean"],
+                        median=stats["median"],
+                        std=stats["std"],
+                        min=stats["min"],
+                        max=stats["max"],
+                    )
+                )
+            else:
+                lines.append(f"| {m} | - | - | - | - | - |")
+    else:
+        lines.append("No aggregate statistics available.")
+    lines.append("")
+
+    # Insights
+    lines.append("## Insights")
+    try:
+        scored = [(m, stats["mean"]) for m, stats in agg.items() if stats and isinstance(stats.get("mean"), (int, float))]
+        if scored:
+            best = max(scored, key=lambda x: x[1])
+            worst = min(scored, key=lambda x: x[1])
+            lines.append(f"- Best average metric: **{best[0]}** ({best[1]:.4f})")
+            lines.append(f"- Lowest average metric: **{worst[0]}** ({worst[1]:.4f})")
         else:
-            lines.append("- No scores")
-        lines.append("")
+            lines.append("- Not enough numeric scores to compute insights.")
+    except Exception:
+        lines.append("- Not enough data to compute insights.")
+    lines.append("")
 
     lines.append("## Per-example (first 10)")
     per = report.get("per_example", [])[:10]
@@ -36,11 +72,17 @@ def save_markdown_report(report: Dict[str, Any], path: Path):
                 lines.append(f"  - Prediction: {pred}")
             if isinstance(res, dict):
                 for metric, v in (res.get("metrics") or {}).items():
-                    if isinstance(v, dict) and "score" in v:
-                        score = v.get("score")
+                    if isinstance(v, dict):
+                        if not v or all(val is None for val in v.values()):
+                            lines.append(f"  - {metric}: No scores")
+                        elif "score" in v:
+                            score = v.get("score")
+                            lines.append(f"  - {metric}: {score}")
+                        else:
+                            lines.append(f"  - {metric}: {v}")
                     else:
                         score = v
-                    lines.append(f"  - {metric}: {score}")
+                        lines.append(f"  - {metric}: {score}")
         lines.append("")
 
     with open(path, "w", encoding="utf-8") as f:

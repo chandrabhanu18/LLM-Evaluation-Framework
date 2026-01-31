@@ -13,6 +13,9 @@ class LLMJudgeConfig(BaseModel):
     api_key_env: Optional[str] = None
     temperature: float = 0.0
     rubric: List[str] = Field(default_factory=lambda: ["coherence", "relevance", "safety"])
+    max_retries: int = 3
+    failure_threshold: int = 5
+    max_tokens: int = 256
 
 
 class EvalConfig(BaseModel):

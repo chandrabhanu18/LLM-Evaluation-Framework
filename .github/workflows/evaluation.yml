@@ -2,9 +2,9 @@ name: Evaluation CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, ci-run ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, ci-run ]
 
 jobs:
   tests:
@@ -23,3 +23,13 @@ jobs:
       - name: Run tests with coverage
         run: |
           pytest tests/ --maxfail=1 --disable-warnings -q --cov=llm_eval --cov-fail-under=80
+
+      - name: Run evaluation (no LLM judge)
+        run: |
+          llm-eval run --config examples/config.yaml --output-dir results --metrics bleu,rouge_l,bertscore,faithfulness,context_relevancy,answer_relevancy
+
+      - name: Upload evaluation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-results
+          path: results/

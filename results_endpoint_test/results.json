@@ -1,0 +1,1348 @@
+{
+  "aggregate": {
+    "bleu": {
+      "mean": 0.15318469655799904,
+      "median": 0.0,
+      "std": 0.2876917055188918,
+      "min": 0.0,
+      "max": 1.0000000000000004
+    },
+    "rouge_l": {
+      "mean": 0.5568385046326223,
+      "median": 0.6,
+      "std": 0.4152289213700249,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "bertscore": {
+      "mean": 0.8964449274539947,
+      "median": 0.9336375445127487,
+      "std": 0.11288639582953192,
+      "min": 0.6477771997451782,
+      "max": 1.0000001192092896
+    },
+    "faithfulness": {
+      "mean": 0.4942619047619048,
+      "median": 0.4642857142857143,
+      "std": 0.41530359970986624,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "context_relevancy": {
+      "mean": 0.8586856842041015,
+      "median": 0.8739376068115234,
+      "std": 0.06438096656126185,
+      "min": 0.7078777849674225,
+      "max": 0.9410037994384766
+    },
+    "answer_relevancy": {
+      "mean": 0.7126519706845283,
+      "median": 0.7190636321902275,
+      "std": 0.07840097406369896,
+      "min": 0.5307516269385815,
+      "max": 0.8766981959342957
+    }
+  },
+  "per_example": [
+    {
+      "query": "What is the capital of France?",
+      "expected_answer": "Paris.",
+      "results": {
+        "model_a": {
+          "prediction": "Paris.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 0.9999999701976776
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9383200407028198
+            },
+            "answer_relevancy": {
+              "score": 0.7986495196819305
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Lyon.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.7462687790393829
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9383200407028198
+            },
+            "answer_relevancy": {
+              "score": 0.6777411997318268
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Summarize the attached paragraph about photosynthesis.",
+      "expected_answer": "Photosynthesis converts light into chemical energy in plants.",
+      "results": {
+        "model_a": {
+          "prediction": "Photosynthesis lets plants convert sunlight into energy.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0728758069843786
+            },
+            "rouge_l": {
+              "score": 0.5333333333333333
+            },
+            "bertscore": {
+              "score": 0.9535990953445435
+            },
+            "faithfulness": {
+              "score": 0.14285714285714285
+            },
+            "context_relevancy": {
+              "score": 0.8251261115074158
+            },
+            "answer_relevancy": {
+              "score": 0.8307689428329468
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Plants use chlorophyll to make food from sunlight.",
+          "metrics": {
+            "bleu": {
+              "score": 0.04767707020457095
+            },
+            "rouge_l": {
+              "score": 0.125
+            },
+            "bertscore": {
+              "score": 0.8279350697994232
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8251261115074158
+            },
+            "answer_relevancy": {
+              "score": 0.775850772857666
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Who wrote 'Pride and Prejudice'?",
+      "expected_answer": "Jane Austen.",
+      "results": {
+        "model_a": {
+          "prediction": "Jane Austen.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000000596046448
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.8739376068115234
+            },
+            "answer_relevancy": {
+              "score": 0.7228543162345886
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Charlotte Bronte.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.7258471995592117
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8739376068115234
+            },
+            "answer_relevancy": {
+              "score": 0.5837693512439728
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Solve: What is 12 multiplied by 8?",
+      "expected_answer": "96.",
+      "results": {
+        "model_a": {
+          "prediction": "96.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000000596046448
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.8164746165275574
+            },
+            "answer_relevancy": {
+              "score": 0.5974072590470314
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "100.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.8263473212718964
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8164746165275574
+            },
+            "answer_relevancy": {
+              "score": 0.5722689628601074
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Explain the difference between TCP and UDP.",
+      "expected_answer": "TCP is connection-oriented and reliable; UDP is connectionless and faster.",
+      "results": {
+        "model_a": {
+          "prediction": "TCP is reliable and connection-oriented; UDP is connectionless and faster.",
+          "metrics": {
+            "bleu": {
+              "score": 0.6132297420585353
+            },
+            "rouge_l": {
+              "score": 0.8181818181818182
+            },
+            "bertscore": {
+              "score": 0.9968928098678589
+            },
+            "faithfulness": {
+              "score": 0.3333333333333333
+            },
+            "context_relevancy": {
+              "score": 0.8056675493717194
+            },
+            "answer_relevancy": {
+              "score": 0.8766981959342957
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "TCP is faster; UDP is reliable.",
+          "metrics": {
+            "bleu": {
+              "score": 0.17632778423526838
+            },
+            "rouge_l": {
+              "score": 0.4705882352941177
+            },
+            "bertscore": {
+              "score": 0.9436421394348145
+            },
+            "faithfulness": {
+              "score": 0.6
+            },
+            "context_relevancy": {
+              "score": 0.8056675493717194
+            },
+            "answer_relevancy": {
+              "score": 0.8459572196006775
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "List three symptoms of diabetes.",
+      "expected_answer": "Increased thirst, frequent urination, fatigue.",
+      "results": {
+        "model_a": {
+          "prediction": "Increased thirst, frequent urination, fatigue.",
+          "metrics": {
+            "bleu": {
+              "score": 1.0000000000000004
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 0.8
+            },
+            "context_relevancy": {
+              "score": 0.8164111077785492
+            },
+            "answer_relevancy": {
+              "score": 0.8225733041763306
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Thirst, blurred vision, hair loss.",
+          "metrics": {
+            "bleu": {
+              "score": 0.07267884212102742
+            },
+            "rouge_l": {
+              "score": 0.20000000000000004
+            },
+            "bertscore": {
+              "score": 0.8856452405452728
+            },
+            "faithfulness": {
+              "score": 0.2
+            },
+            "context_relevancy": {
+              "score": 0.8164111077785492
+            },
+            "answer_relevancy": {
+              "score": 0.7975944876670837
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Translate 'hello' to Spanish.",
+      "expected_answer": "Hola.",
+      "results": {
+        "model_a": {
+          "prediction": "Hola.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000000596046448
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9046818614006042
+            },
+            "answer_relevancy": {
+              "score": 0.6507211923599243
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Hola.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000000596046448
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9046818614006042
+            },
+            "answer_relevancy": {
+              "score": 0.6507211923599243
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What year did the Berlin Wall fall?",
+      "expected_answer": "1989.",
+      "results": {
+        "model_a": {
+          "prediction": "1989.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 0.9999999701976776
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9118149280548096
+            },
+            "answer_relevancy": {
+              "score": 0.6646763682365417
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "1990.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.9296927154064178
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9118149280548096
+            },
+            "answer_relevancy": {
+              "score": 0.6577059775590897
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Give a brief recipe for scrambled eggs.",
+      "expected_answer": "Beat eggs, cook in butter until set.",
+      "results": {
+        "model_a": {
+          "prediction": "Beat eggs and cook in butter until set.",
+          "metrics": {
+            "bleu": {
+              "score": 0.6606328636027612
+            },
+            "rouge_l": {
+              "score": 0.9333333333333333
+            },
+            "bertscore": {
+              "score": 0.9970886707305908
+            },
+            "faithfulness": {
+              "score": 0.375
+            },
+            "context_relevancy": {
+              "score": 0.7672450542449951
+            },
+            "answer_relevancy": {
+              "score": 0.7789331376552582
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Crack eggs and stir.",
+          "metrics": {
+            "bleu": {
+              "score": 0.057079690340587526
+            },
+            "rouge_l": {
+              "score": 0.18181818181818182
+            },
+            "bertscore": {
+              "score": 0.8506244719028473
+            },
+            "faithfulness": {
+              "score": 0.5
+            },
+            "context_relevancy": {
+              "score": 0.7672450542449951
+            },
+            "answer_relevancy": {
+              "score": 0.7988387942314148
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What is the chemical symbol for Gold?",
+      "expected_answer": "Au.",
+      "results": {
+        "model_a": {
+          "prediction": "Au.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000001192092896
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9202361702919006
+            },
+            "answer_relevancy": {
+              "score": 0.5846036896109581
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Gd.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.6477771997451782
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9202361702919006
+            },
+            "answer_relevancy": {
+              "score": 0.5596156604588032
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "How to recover a deleted file on Windows?",
+      "expected_answer": "Check Recycle Bin or use file recovery tools.",
+      "results": {
+        "model_a": {
+          "prediction": "Check the Recycle Bin or use recovery software.",
+          "metrics": {
+            "bleu": {
+              "score": 0.3432945239845197
+            },
+            "rouge_l": {
+              "score": 0.75
+            },
+            "bertscore": {
+              "score": 0.973844051361084
+            },
+            "faithfulness": {
+              "score": 0.5
+            },
+            "context_relevancy": {
+              "score": 0.738517165184021
+            },
+            "answer_relevancy": {
+              "score": 0.7371357381343842
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Use Command Prompt commands.",
+          "metrics": {
+            "bleu": {
+              "score": 0.04799810699119212
+            },
+            "rouge_l": {
+              "score": 0.16666666666666666
+            },
+            "bertscore": {
+              "score": 0.6753222644329071
+            },
+            "faithfulness": {
+              "score": 0.25
+            },
+            "context_relevancy": {
+              "score": 0.738517165184021
+            },
+            "answer_relevancy": {
+              "score": 0.6338378340005875
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Explain overfitting in machine learning.",
+      "expected_answer": "When a model learns noise and doesn't generalize well.",
+      "results": {
+        "model_a": {
+          "prediction": "When a model memorizes training data and fails on new data.",
+          "metrics": {
+            "bleu": {
+              "score": 0.14323145079400493
+            },
+            "rouge_l": {
+              "score": 0.380952380952381
+            },
+            "bertscore": {
+              "score": 0.785583108663559
+            },
+            "faithfulness": {
+              "score": 0.2
+            },
+            "context_relevancy": {
+              "score": 0.7985604405403137
+            },
+            "answer_relevancy": {
+              "score": 0.7046907544136047
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "When a model is too large it overfits.",
+          "metrics": {
+            "bleu": {
+              "score": 0.170653267718276
+            },
+            "rouge_l": {
+              "score": 0.33333333333333326
+            },
+            "bertscore": {
+              "score": 0.7214104533195496
+            },
+            "faithfulness": {
+              "score": 0.25
+            },
+            "context_relevancy": {
+              "score": 0.7985604405403137
+            },
+            "answer_relevancy": {
+              "score": 0.7464289218187332
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Name a primary color.",
+      "expected_answer": "Red.",
+      "results": {
+        "model_a": {
+          "prediction": "Red.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.8861381709575653
+            },
+            "answer_relevancy": {
+              "score": 0.7488339841365814
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Green.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.8772574663162231
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8861381709575653
+            },
+            "answer_relevancy": {
+              "score": 0.7566342651844025
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What does CPU stand for?",
+      "expected_answer": "Central Processing Unit.",
+      "results": {
+        "model_a": {
+          "prediction": "Central Processing Unit.",
+          "metrics": {
+            "bleu": {
+              "score": 1.0000000000000004
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9312314391136169
+            },
+            "answer_relevancy": {
+              "score": 0.7215830683708191
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Central Process Unit.",
+          "metrics": {
+            "bleu": {
+              "score": 0.35355339059327373
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 0.939900130033493
+            },
+            "faithfulness": {
+              "score": 0.6666666666666666
+            },
+            "context_relevancy": {
+              "score": 0.9312314391136169
+            },
+            "answer_relevancy": {
+              "score": 0.6634602546691895
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Who is known as the father of computers?",
+      "expected_answer": "Charles Babbage.",
+      "results": {
+        "model_a": {
+          "prediction": "Charles Babbage.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.8730854690074921
+            },
+            "answer_relevancy": {
+              "score": 0.6849878877401352
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Alan Turing.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.7150316834449768
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8730854690074921
+            },
+            "answer_relevancy": {
+              "score": 0.7642459869384766
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "List safety precautions when using bleach.",
+      "expected_answer": "Use gloves, ensure ventilation, avoid mixing with ammonia.",
+      "results": {
+        "model_a": {
+          "prediction": "Wear gloves and ventilate the area.",
+          "metrics": {
+            "bleu": {
+              "score": 0.04410363736106612
+            },
+            "rouge_l": {
+              "score": 0.28571428571428575
+            },
+            "bertscore": {
+              "score": 0.8469042479991913
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.8186163902282715
+            },
+            "answer_relevancy": {
+              "score": 0.7110313922166824
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Rinse with water after use.",
+          "metrics": {
+            "bleu": {
+              "score": 0.041949309054502545
+            },
+            "rouge_l": {
+              "score": 0.15384615384615385
+            },
+            "bertscore": {
+              "score": 0.7351494878530502
+            },
+            "faithfulness": {
+              "score": 0.2
+            },
+            "context_relevancy": {
+              "score": 0.8186163902282715
+            },
+            "answer_relevancy": {
+              "score": 0.7110252976417542
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What's the square root of 144?",
+      "expected_answer": "12.",
+      "results": {
+        "model_a": {
+          "prediction": "12.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9410037994384766
+            },
+            "answer_relevancy": {
+              "score": 0.6719906330108643
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "11.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.9320473670959473
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9410037994384766
+            },
+            "answer_relevancy": {
+              "score": 0.623897522687912
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Briefly describe blockchain.",
+      "expected_answer": "A distributed ledger of transactions secured cryptographically.",
+      "results": {
+        "model_a": {
+          "prediction": "A distributed ledger secured by cryptographic hashes.",
+          "metrics": {
+            "bleu": {
+              "score": 0.23356898886410005
+            },
+            "rouge_l": {
+              "score": 0.7142857142857143
+            },
+            "bertscore": {
+              "score": 0.9338129460811615
+            },
+            "faithfulness": {
+              "score": 0.42857142857142855
+            },
+            "context_relevancy": {
+              "score": 0.8797477185726166
+            },
+            "answer_relevancy": {
+              "score": 0.7353926002979279
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "A chain of blocks containing transactions.",
+          "metrics": {
+            "bleu": {
+              "score": 0.08051153633013375
+            },
+            "rouge_l": {
+              "score": 0.4615384615384615
+            },
+            "bertscore": {
+              "score": 0.7524940967559814
+            },
+            "faithfulness": {
+              "score": 0.16666666666666666
+            },
+            "context_relevancy": {
+              "score": 0.8797477185726166
+            },
+            "answer_relevancy": {
+              "score": 0.7926629483699799
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "How to tie a tie (four-in-hand)?",
+      "expected_answer": "Cross the wide end over, loop, and pull through.",
+      "results": {
+        "model_a": {
+          "prediction": "Cross, loop and pull through.",
+          "metrics": {
+            "bleu": {
+              "score": 0.2487521488068455
+            },
+            "rouge_l": {
+              "score": 0.7142857142857143
+            },
+            "bertscore": {
+              "score": 0.9156684279441833
+            },
+            "faithfulness": {
+              "score": 0.6
+            },
+            "context_relevancy": {
+              "score": 0.8086056113243103
+            },
+            "answer_relevancy": {
+              "score": 0.6991240680217743
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Wrap and knot.",
+          "metrics": {
+            "bleu": {
+              "score": 0.025708144432736023
+            },
+            "rouge_l": {
+              "score": 0.16666666666666666
+            },
+            "bertscore": {
+              "score": 0.742477536201477
+            },
+            "faithfulness": {
+              "score": 0.3333333333333333
+            },
+            "context_relevancy": {
+              "score": 0.8086056113243103
+            },
+            "answer_relevancy": {
+              "score": 0.8003324866294861
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What is the boiling point of water at sea level?",
+      "expected_answer": "100\u00b0C.",
+      "results": {
+        "model_a": {
+          "prediction": "100\u00b0C.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 0.5
+            },
+            "context_relevancy": {
+              "score": 0.8861028552055359
+            },
+            "answer_relevancy": {
+              "score": 0.7090829908847809
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "100 degrees.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.5
+            },
+            "bertscore": {
+              "score": 0.9331705570220947
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.8861028552055359
+            },
+            "answer_relevancy": {
+              "score": 0.7017727792263031
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Give an example of a palindrome.",
+      "expected_answer": "madam.",
+      "results": {
+        "model_a": {
+          "prediction": "madam.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.7078777849674225
+            },
+            "answer_relevancy": {
+              "score": 0.5922695249319077
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "level.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.6664051413536072
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.7078777849674225
+            },
+            "answer_relevancy": {
+              "score": 0.5307516269385815
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What is an API?",
+      "expected_answer": "Application Programming Interface.",
+      "results": {
+        "model_a": {
+          "prediction": "Application Programming Interface.",
+          "metrics": {
+            "bleu": {
+              "score": 1.0000000000000004
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0000000596046448
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.9364427924156189
+            },
+            "answer_relevancy": {
+              "score": 0.7066774368286133
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "A programming interface.",
+          "metrics": {
+            "bleu": {
+              "score": 0.1597357760615681
+            },
+            "rouge_l": {
+              "score": 0.6666666666666666
+            },
+            "bertscore": {
+              "score": 0.9334621429443359
+            },
+            "faithfulness": {
+              "score": 0.6666666666666666
+            },
+            "context_relevancy": {
+              "score": 0.9364427924156189
+            },
+            "answer_relevancy": {
+              "score": 0.7165441960096359
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "Name one planet in our solar system.",
+      "expected_answer": "Mars.",
+      "results": {
+        "model_a": {
+          "prediction": "Mars.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.846774160861969
+            },
+            "answer_relevancy": {
+              "score": 0.7333733588457108
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Venus.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.7843189835548401
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.846774160861969
+            },
+            "answer_relevancy": {
+              "score": 0.7546833455562592
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "How does caching improve performance?",
+      "expected_answer": "By storing frequent data to reduce latency.",
+      "results": {
+        "model_a": {
+          "prediction": "By storing frequent data to reduce latency.",
+          "metrics": {
+            "bleu": {
+              "score": 1.0000000000000004
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9050905108451843
+            },
+            "answer_relevancy": {
+              "score": 0.7457859665155411
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "It stores copies to speed up retrieval.",
+          "metrics": {
+            "bleu": {
+              "score": 0.06567274736060397
+            },
+            "rouge_l": {
+              "score": 0.2857142857142857
+            },
+            "bertscore": {
+              "score": 0.7902560830116272
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.9050905108451843
+            },
+            "answer_relevancy": {
+              "score": 0.7491289377212524
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": "What is the capital of Japan?",
+      "expected_answer": "Tokyo.",
+      "results": {
+        "model_a": {
+          "prediction": "Tokyo.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 1.0
+            },
+            "bertscore": {
+              "score": 1.0
+            },
+            "faithfulness": {
+              "score": 1.0
+            },
+            "context_relevancy": {
+              "score": 0.92943274974823
+            },
+            "answer_relevancy": {
+              "score": 0.802523672580719
+            }
+          }
+        },
+        "model_b": {
+          "prediction": "Kyoto.",
+          "metrics": {
+            "bleu": {
+              "score": 0.0
+            },
+            "rouge_l": {
+              "score": 0.0
+            },
+            "bertscore": {
+              "score": 0.836369127035141
+            },
+            "faithfulness": {
+              "score": 0.0
+            },
+            "context_relevancy": {
+              "score": 0.92943274974823
+            },
+            "answer_relevancy": {
+              "score": 0.734759509563446
+            }
+          }
+        }
+      }
+    }
+  ]
+}

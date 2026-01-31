@@ -11,7 +11,13 @@ class BleuMetric(Metric):
     def compute(self, query: str, expected: str, answer: str, contexts: Any) -> Dict[str, Any]:
         try:
             import sacrebleu
-            score = sacrebleu.sentence_bleu(answer, [expected]).score
+            # Prefer metrics API to support variable n-gram order
+            if hasattr(sacrebleu, "metrics") and hasattr(sacrebleu.metrics, "BLEU"):
+                bleu = sacrebleu.metrics.BLEU(max_ngram_order=self.ngram)
+                score = bleu.sentence_score(answer, [expected]).score
+            else:
+                # Fallback to sentence_bleu when metrics API isn't available
+                score = sacrebleu.sentence_bleu(answer, [expected]).score
             return {"score": float(score / 100.0)}
         except Exception:
             return {"score": 0.0}
