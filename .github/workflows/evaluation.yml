@@ -1,10 +1,7 @@
 name: Evaluation CI
 
 on:
-  push:
-    branches: [ main, master, ci-run ]
-  pull_request:
-    branches: [ main, master, ci-run ]
+  workflow_dispatch:
 
 jobs:
   tests:
