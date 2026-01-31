@@ -54,19 +54,19 @@ pip install -e .
 ### Running Your First Evaluation
 
 ```bash
-llm-eval run --config examples/config.yaml --output-dir results --verbose
+python -m llm_eval --config examples/config.yaml --output-dir results --verbose
 ```
 
 Optional filters:
 
 ```bash
-llm-eval run --config examples/config.yaml --output-dir results --models model_a --metrics bleu,rouge_l
+python -m llm_eval --config examples/config.yaml --output-dir results --models model_a --metrics bleu,rouge_l
 ```
 
 Logging control:
 
 ```bash
-llm-eval run --config examples/config.yaml --output-dir results --log-level DEBUG
+python -m llm_eval --config examples/config.yaml --output-dir results --log-level DEBUG
 ```
 
 This will:
@@ -75,6 +75,17 @@ This will:
 - Generate reports in `results/` (JSON, Markdown, PNG charts)
 
 ---
+
+## CLI Endpoints (Options)
+
+The CLI exposes the following options (run `python -m llm_eval --help` to verify):
+
+- `--config` (required): Path to config YAML/JSON
+- `--output-dir`: Override output directory
+- `--verbose`: Enable verbose logging
+- `--models`: Comma-separated model names to run
+- `--metrics`: Comma-separated metric names to run
+- `--log-level`: Logging level (DEBUG, INFO, WARNING, ERROR)
 
 ## Architecture
 
