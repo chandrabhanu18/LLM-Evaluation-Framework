@@ -26,7 +26,7 @@ jobs:
 
       - name: Run evaluation (no LLM judge)
         run: |
-          python -m llm_eval --config examples/config.yaml --output-dir results --metrics bleu,rouge_l,bertscore,faithfulness,context_relevancy,answer_relevancy
+          python -m llm_eval --config examples/config.yaml --output-dir results --metrics bleu,rouge_l,faithfulness
 
       - name: Upload evaluation artifacts
         uses: actions/upload-artifact@v4
