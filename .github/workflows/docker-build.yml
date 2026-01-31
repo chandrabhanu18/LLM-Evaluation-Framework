@@ -32,7 +32,7 @@ jobs:
           load: true
       - name: Run smoke test in container
         run: |
-          docker run --rm llm-eval:ci python -m llm_eval --config examples/config.yaml --output /tmp/ci-smoke || exit 1
+          docker run --rm llm-eval:ci python -m llm_eval --config examples/config.yaml --output-dir /tmp/ci-smoke || exit 1
       - name: Upload smoke artifacts
         uses: actions/upload-artifact@v4
         with:

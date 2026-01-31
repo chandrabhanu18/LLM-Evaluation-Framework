@@ -39,7 +39,7 @@ dev = [
 ]
 
 [project.scripts]
-llm-eval = "llm_eval.cli:app"
+llm-eval = "llm_eval.cli:main"
 
 [project.urls]
 Homepage = "https://example.com/llm-eval"
